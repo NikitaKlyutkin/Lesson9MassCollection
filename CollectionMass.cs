@@ -10,7 +10,7 @@ namespace Lesson9MassCollection
 {
     internal class Collection<T>
     {
-        private List<T> ListCollection { get; set; }
+        public List<T> ListCollection { get; set; }
         public Collection()
         {
             ListCollection = new List<T>();
@@ -35,6 +35,16 @@ namespace Lesson9MassCollection
         public int Count() // получение длинны
         {
             return ListCollection.Count();
+        }
+    }
+
+    internal class CollectionInt : Collection<int>
+    {
+        public static CollectionInt operator +(CollectionInt conteiner1, CollectionInt conteiner2)
+        {
+            var result = new CollectionInt();
+
+            return result;
         }
     }
 }
