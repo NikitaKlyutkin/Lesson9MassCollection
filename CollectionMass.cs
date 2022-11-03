@@ -10,7 +10,7 @@ namespace Lesson9MassCollection
 {
     internal class Collection<T>
     {
-        public List<T> ListCollection { get; set; }
+        private List<T> ListCollection { get; set; }
         public Collection()
         {
             ListCollection = new List<T>();
@@ -40,6 +40,7 @@ namespace Lesson9MassCollection
 
     internal class CollectionInt : Collection<int>
     {
+        public int[] Value { get; set; }
         public static CollectionInt operator +(CollectionInt conteiner1, CollectionInt conteiner2)
         {
             var result = new CollectionInt();

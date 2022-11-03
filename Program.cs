@@ -11,4 +11,6 @@ Console.WriteLine(collection[2]);
 Console.WriteLine(collection[3]);
 int[] nums3 = new int[4] { 1, 2, 3, 5 };
 collection2.Add(nums3);
-Console.WriteLine(collection + collection2);
+CollectionInt conteiner1 = new CollectionInt {Value = };
+CollectionInt conteiner2 = new CollectionInt {};
+var result = conteiner1 + conteiner2;
