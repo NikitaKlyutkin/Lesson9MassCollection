@@ -43,7 +43,15 @@ namespace Lesson9MassCollection
         public static CollectionInt operator +(CollectionInt conteiner1, CollectionInt conteiner2)
         {
             var result = new CollectionInt();
+            if (conteiner1.Count != conteiner2.Count)
+            {
+                throw new Exception("Размеры массива не совпадают");
+            }
 
+            for (int i = 0; i < conteiner1.Count(); i++)
+            {
+                result[i] = conteiner1[i] + conteiner2[i];
+            }
             return result;
         }
     }
