@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,11 @@ namespace Lesson9MassCollection
 {
     internal class Collection<T>
     {
-        public List<T> ListCollection { get; set; }
+        private List<T> ListCollection { get; set; }
+        public Collection()
+        {
+            ListCollection = new List<T>();
+        }
         public void Add(T[] array) // Добавление элементов
         {
             ListCollection.AddRange(array);
@@ -25,6 +30,7 @@ namespace Lesson9MassCollection
         public T this[int index] // получение элемента
         {
             get => ListCollection[index];
+            set => ListCollection[index] = value;
         }
         public int Count() // получение длинны
         {

@@ -1,9 +1,9 @@
 ﻿using Lesson9MassCollection;
 
-Collection<int> collection = new Collection<int>();
-collection.ListCollection = new List<int>();
+var collection = new Collection<int>();
 int[] nums2 = new int[4] { 1, 2, 3, 5 };
-collection.Add(nums2);
-var elem2 = collection [2];
+collection.Add(nums2); 
 
-Console.WriteLine(elem2);
+collection[2] = 34;
+
+Console.WriteLine(collection[2]);
