@@ -18,10 +18,10 @@ namespace Lesson9MassCollection
         {
             ListCollection.Remove(item);
         }
-        public T GetItem(int index)
-        {
-            return ListCollection[index];
-        }
+        //public T GetItem(int index)
+        //{
+        //    return ListCollection[index];
+        //}
         public T this[int index] // получение элемента
         {
             get => ListCollection[index];
