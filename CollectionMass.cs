@@ -19,6 +19,10 @@ namespace Lesson9MassCollection
         {
             ListCollection.AddRange(array);
         }
+        public List<T> AsList() // перехват коллекции для другого класса
+        {
+            return ListCollection;
+        }
         public void Remove(T item) // удаление элемента
         {
             ListCollection.Remove(item);
@@ -36,11 +40,12 @@ namespace Lesson9MassCollection
         {
             return ListCollection.Count();
         }
+
     }
 
     internal class CollectionInt : Collection<int>
     {
-        public int[] Value { get; set; }
+  
         public static CollectionInt operator +(CollectionInt conteiner1, CollectionInt conteiner2)
         {
             var result = new CollectionInt();

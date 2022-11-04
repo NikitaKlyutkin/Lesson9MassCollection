@@ -1,16 +1,19 @@
 ﻿using Lesson9MassCollection;
 
-var collection = new Collection<int>();
+var collection1 = new Collection<int>();
 var collection2 = new Collection<int>();
-int[] nums2 = new int[4] { 1, 2, 3, 5 };
-collection.Add(nums2);
+int[] nums1 = new int[4] { 1, 2, 3, 5 };
+collection1.Add(nums1);
 
-collection[2] = 34;
-collection[3] = 35;
-Console.WriteLine(collection[2]);
-Console.WriteLine(collection[3]);
-int[] nums3 = new int[4] { 1, 2, 3, 5 };
-collection2.Add(nums3);
-CollectionInt conteiner1 = new CollectionInt {Value = };
-CollectionInt conteiner2 = new CollectionInt {};
+int[] nums2 = new int[4] { 1, 2, 3, 5 };
+collection2.Add(nums2);
+
+CollectionInt conteiner1 = new CollectionInt { };
+var listOfCol1 = collection1.AsList();
+conteiner1.Add(listOfCol1.ToArray());
+
+CollectionInt conteiner2 = new CollectionInt { };
+var listOfCol2 = collection2.AsList();
+conteiner2.Add(listOfCol2.ToArray());
+
 var result = conteiner1 + conteiner2;
