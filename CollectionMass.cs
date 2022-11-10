@@ -19,6 +19,10 @@ namespace Lesson9MassCollection
         {
             ListCollection.AddRange(array);
         }
+        public void Add(T val) // Добавление элементов
+        {
+            ListCollection.Add(val);
+        }
         public List<T> AsList() // перехват коллекции для другого класса
         {
             return ListCollection;
@@ -45,20 +49,50 @@ namespace Lesson9MassCollection
 
     internal class CollectionInt : Collection<int>
     {
-  
         public static CollectionInt operator +(CollectionInt conteiner1, CollectionInt conteiner2)
         {
             var result = new CollectionInt();
-            if (conteiner1.Count != conteiner2.Count)
+            if (conteiner1.Count() != conteiner2.Count())
             {
                 throw new Exception("Размеры массива не совпадают");
             }
 
             for (int i = 0; i < conteiner1.Count(); i++)
             {
-                result[i] = conteiner1[i] + conteiner2[i];
+                result.Add(conteiner1[i] + conteiner2[i]);
             }
             return result;
+        }
+
+        public static bool operator ==(CollectionInt conteiner1, CollectionInt conteiner2)
+        {
+            if(conteiner1.Count() != conteiner2.Count())
+            {
+                Console.WriteLine("Размеры массива не совпадают");
+            }
+            for(int i = 0; i < conteiner1.Count(); i++)
+            {
+                if (conteiner1[i] != conteiner2[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public static bool operator !=(CollectionInt conteiner1, CollectionInt conteiner2)
+        {
+            if (conteiner1.Count() != conteiner2.Count())
+            {
+                Console.WriteLine("Размеры массива не совпадают");
+            }
+            for (int i = 0; i < conteiner1.Count(); i++)
+            {
+                if (conteiner1[i] != conteiner2[i])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

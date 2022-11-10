@@ -16,4 +16,17 @@ CollectionInt conteiner2 = new CollectionInt { };
 var listOfCol2 = collection2.AsList();
 conteiner2.Add(listOfCol2.ToArray());
 
+Console.WriteLine("Sum:");
 var result = conteiner1 + conteiner2;
+for(int i = 0; i < nums1.Length; i++)
+{
+    Console.WriteLine(result[i]);
+}
+
+Console.WriteLine("==");
+var result2 = conteiner1 == conteiner2;
+Console.WriteLine(result2);
+
+Console.WriteLine("!=");
+var result3 = conteiner1 != conteiner2;
+Console.WriteLine(result3);
