@@ -18,7 +18,8 @@ conteiner2.Add(listOfCol2.ToArray());
 
 Console.WriteLine("Sum:");
 var result = conteiner1 + conteiner2;
-for(int i = 0; i < nums1.Length; i++)
+
+for(int i = 0; i < result.Count(); i++)
 {
     Console.WriteLine(result[i]);
 }
